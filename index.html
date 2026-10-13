@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guadalupe Roust — Organizadora de Eventos & Directora Creativa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/portfolio.css">
+<style>
+body{background:var(--ash);color:var(--wine);overflow-x:clip}
+html{overflow-x:clip}
+.lab{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:20px 32px;color:var(--almond);mix-blend-mode:difference}
+nav .links{display:flex;gap:26px}
+@media(max-width:820px){nav .links{display:none}nav{padding:16px 20px}}
+/* hero: DUSK logotype over photo */
+.hero{position:relative;height:100vh;min-height:620px;background:var(--velvet);overflow:hidden}
+.hero .mb{position:absolute;inset:0;cursor:default}
+.hero .mb img{object-position:center 35%}
+.hero .mb .g{display:block;filter:blur(12px);opacity:.55;transform:translateX(4%) scale(1.06)}
+.split .top h2 .scr{font-family:var(--script);font-weight:400;font-style:normal;letter-spacing:0;color:var(--red)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.35));pointer-events:none}
+.logo{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);color:var(--almond);text-align:left;line-height:.8}
+.logo .l{display:block;font-weight:800;font-size:clamp(90px,17vw,250px);letter-spacing:-.06em}
+.logo .l i{font-family:var(--script);font-style:normal;font-weight:400;font-size:1.05em;letter-spacing:0;margin-left:.02em}
+.logo .sub{display:block;margin-top:.25em;font-weight:500;font-size:clamp(18px,2.6vw,38px);letter-spacing:-.01em;text-transform:uppercase}
+.hero .tagline{position:absolute;z-index:3;bottom:32px;left:0;right:0;text-align:center;color:var(--almond)}
+/* split block: color top + photo bottom */
+.split{display:grid;grid-template-rows:auto auto}
+.split .top{background:var(--velvet);padding:28px 32px 90px;position:relative}
+.split .top .bar{display:flex;justify-content:space-between;gap:24px}
+.split .top h2{margin-top:70px;font-size:clamp(40px,6vw,92px);font-weight:500;letter-spacing:-.04em;line-height:.92;max-width:11ch}
+.split .top h2.r{margin:30px 0 0 auto;text-align:left;max-width:9ch}
+.split .bottom{aspect-ratio:21/9;background:#fff}
+@media(max-width:700px){.split .top{padding:22px 20px 60px}.split .bottom{aspect-ratio:4/3}}
+/* about */
+.about{display:grid;grid-template-columns:1fr 1.2fr;background:var(--almond)}
+.about .ph{aspect-ratio:auto;min-height:100%;align-self:stretch}
+@media(max-width:820px){.about .ph{aspect-ratio:4/5;min-height:0}}
+.about .ph img{filter:grayscale(1) contrast(1.05)}
+.about .tx{padding:64px 48px;display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+.about .tx p{font-size:clamp(18px,1.8vw,24px);line-height:1.4;font-weight:500;color:var(--black);max-width:34ch;text-wrap:pretty}
+.about .tx p + p{margin-top:16px;font-size:15px;font-weight:400;color:#3a3a37}
+.xp{display:flex;flex-direction:column;border-top:1px solid #d6d3c8}
+.xp div{display:grid;grid-template-columns:110px 1fr auto;gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid #d6d3c8;color:var(--black)}
+.xp b{font-weight:600;font-size:15px}
+.xp span:last-child{font-size:13px;color:#5a5a55;text-align:right}
+.xp .lab{color:var(--red)}
+@media(max-width:560px){.xp div{grid-template-columns:1fr}.xp span:last-child{text-align:left}}
+.stats{display:flex;gap:36px;flex-wrap:wrap}
+.stats div{display:flex;flex-direction:column;gap:6px;color:var(--black)}
+.stats b{font-size:clamp(26px,2.6vw,38px);font-weight:800;letter-spacing:-.04em;color:var(--wine)}
+.about .tx p.story{max-width:48ch;font-size:clamp(16px,1.35vw,19px);line-height:1.5;font-weight:500;color:var(--black)}
+.about .tx p.story+p.story{margin-top:14px;font-size:clamp(16px,1.35vw,19px);font-weight:500;color:var(--black)}
+.about .tx p.story em{font-family:var(--script);font-style:normal;font-weight:400;font-size:1.5em;color:var(--red);line-height:0}
+.about .tx .sig{font-family:var(--script);font-size:clamp(48px,6vw,84px);color:var(--red);line-height:1}
+@media(max-width:820px){.about{grid-template-columns:1fr}.about .tx{padding:44px 20px}}
+/* work */
+.work{padding:100px 32px}
+.work .head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;margin-bottom:36px}
+.work h2{font-size:clamp(56px,10vw,150px);font-weight:800;letter-spacing:-.06em;line-height:.8;text-transform:uppercase}
+.work h2 i{font-family:var(--script);font-style:normal;font-weight:400;text-transform:none;letter-spacing:0;color:var(--red)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:640px){.grid{grid-template-columns:1fr}.work{padding:72px 20px}}
+.card{background:var(--almond);display:flex;flex-direction:column;cursor:pointer}
+.card .cap{background:var(--velvet);padding:18px 20px 34px;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;transition:background .4s var(--ease)}
+.card:hover .cap{background:var(--red);color:var(--almond)}
+.card .cap h3{font-size:clamp(22px,2.6vw,34px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.card .mb{aspect-ratio:3/2}
+.card[data-id="sofi-martin"] .mb img{object-position:center 60%}
+.card .play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2;pointer-events:none}
+.card .play b{width:58px;height:58px;border-radius:50%;background:var(--red);color:var(--almond);display:flex;align-items:center;justify-content:center;padding-left:3px}
+/* services — blurred full photo with thin white type */
+.svc{position:relative;min-height:90vh;color:var(--almond);overflow:hidden}
+.svc{background:#c9c6bf}
+.svc-slot{position:absolute;inset:0}
+.svc-slot img{width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.8)}
+.svc .in{pointer-events:none;text-shadow:0 1px 12px rgba(0,0,0,.25)}
+.svc .in{position:relative;z-index:2;min-height:90vh;display:grid;grid-template-columns:1fr 1.2fr .8fr;gap:32px;align-items:center;padding:60px 32px}
+.svc h2{font-size:clamp(40px,5vw,72px);font-weight:400;letter-spacing:.02em;line-height:1;text-transform:uppercase}
+.svc ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.svc li{font-size:14px;font-weight:500;letter-spacing:.12em;text-transform:uppercase}
+@media(max-width:820px){.svc .in{grid-template-columns:1fr;align-content:center;padding:60px 20px}}
+/* contact */
+.contact{background:var(--wine);color:var(--almond);padding:100px 32px 36px}
+.contact h2{font-size:clamp(60px,12vw,180px);font-weight:800;letter-spacing:-.06em;line-height:.8}
+.contact h2 i{font-family:var(--script);font-style:normal;font-weight:400;letter-spacing:0;color:var(--velvet)}
+.contact .rows{margin-top:60px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:1000px){.contact .rows{grid-template-columns:1fr 1fr}}
+.contact .rows a{border-top:1px solid rgba(249,248,243,.35);padding-top:16px;display:flex;flex-direction:column;gap:10px;font-size:clamp(16px,1.6vw,22px);font-weight:500}
+.contact .rows a:hover{color:var(--velvet)}
+.contact .foot{margin-top:80px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;opacity:.7}
+@media(max-width:700px){.contact .rows{grid-template-columns:1fr}.contact{padding:72px 20px 30px}}
+@media(max-width:600px){.logo .l{font-size:clamp(64px,22vw,90px)}.logo{width:max-content;max-width:calc(100% - 40px)}.split .top h2{font-size:clamp(34px,10vw,44px)}.xp div{grid-template-columns:1fr}.work .head{flex-direction:column;align-items:flex-start;gap:12px}.split .top .bar{flex-direction:column;gap:22px}.split .top h2,.split .top h2.r{max-width:none;margin:48px 0 0;text-align:left;font-size:clamp(36px,11vw,48px);line-height:1}.split .top h2.r{margin-top:6px}}
+</style>
+</head>
+<body>
+<nav>
+<a href="#top" class="lab">Guadalupe Roust</a>
+<div class="links lab"><a href="#sobre">Sobre mí</a><a href="#eventos">Eventos</a><a href="#publicidad">Publicidad</a><a href="#servicios">Servicios</a><a href="#contacto">Contacto</a></div>
+<span class="lab">Buenos Aires</span>
+</nav>
+
+<header class="hero" id="top" data-screen-label="01 Hero">
+<div class="mb" id="hero-ph"></div>
+<div class="logo"><span class="l">R<i>o</i></span><span class="l">UST.</span><span class="sub">Organizadora de eventos<br>&amp; directora creativa</span></div>
+<div class="tagline lab">Organizadora de eventos &amp; directora creativa — Buenos Aires</div>
+</header>
+
+<section class="split" data-screen-label="02 Intro">
+<div class="top">
+<div class="bar lab"><span>Buenos Aires</span><span>Eventos * Marcas * Audiovisual</span></div>
+<h2>“El arte de darle</h2>
+<h2 class="r">forma al <i class="scr">caos.</i>”</h2>
+</div>
+</section>
+
+<section class="about" id="sobre" data-screen-label="03 Sobre mí">
+<div class="ph mb" id="about-ph"></div>
+<div class="tx">
+<div class="lab" style="color:var(--red)">Sobre mí</div>
+<div>
+<p class="story">Soy Guadalupe Roust y, si tuviera que definirme, diría que soy una persona inquieta, creativa y bastante resolutiva. Me gustan las ideas, incluso esas que al principio parecen imposibles. Me gusta pensar distinto, buscar alternativas y encontrar la manera de hacerlas realidad.</p>
+<p class="story">Encontré en la producción un lugar donde conviven dos partes muy mías: la creatividad y la organización. Donde puedo imaginar sin límites, pero también ocuparme de cada detalle para que las cosas sucedan.</p>
+<p class="story">No creo en una única forma de crear. Creo en animarse a pensar, probar, resolver y <em>volver a empezar.</em></p>
+</div>
+<div class="xp">
+<div><span class="lab">2022 — 2025</span><b>Productora de eventos</b><span>L’Pita Producciones</span></div>
+<div><span class="lab">2022 — 2024</span><b>Asistente de producción</b><span>20/20 Films · freelance</span></div>
+<div><span class="lab">2019 — 2020</span><b>Productora teatral</b><span>PEP Producciones · Paseo La Plaza</span></div>
+</div>
+<div class="sig">Guadalupe Roust</div>
+</div>
+</section>
+
+<section class="work" id="eventos" data-screen-label="04 Eventos">
+<div class="head"><h2>Even<i>tos</i></h2><span class="lab">10 proyectos</span></div>
+<div class="grid rv" id="g-ev"></div>
+</section>
+
+<section class="work" id="publicidad" style="padding-top:0" data-screen-label="05 Publicidad">
+<div class="head"><h2>Publi<i>cidad</i></h2><span class="lab">Asistente en producción</span></div>
+<div class="grid rv" id="g-pub"></div>
+</section>
+
+<section class="svc" id="servicios" data-screen-label="06 Servicios">
+<div class="svc-slot"><img src="assets/stock/svc-boots-hq.jpg" alt=""></div>
+<div class="in">
+<h2>Mis<br>servicios</h2>
+<ul><li>Producción de eventos.</li><li>Dirección creativa.</li><li>Diseño de ambientaciones.</li><li>Activaciones de marca.</li></ul>
+<div class="lab">Buenos Aires</div>
+</div>
+</section>
+
+<section class="contact" id="contacto" data-screen-label="07 Contacto">
+<h2>Hable<i>mos</i>.</h2>
+<div class="rows">
+<a id="c-mail"><span class="lab">Mail</span><span></span></a>
+<a id="c-wa" target="_blank"><span class="lab">WhatsApp</span><span></span></a>
+<a id="c-ig" target="_blank"><span class="lab">Instagram</span><span></span></a>
+</div>
+<div class="foot lab"><span>© Guadalupe Roust</span><span>Buenos Aires · Argentina</span></div>
+</section>
+
+<script src="shared/portfolio.js"></script>
+<script src="shared/image-slot.js"></script>
+<script>
+const s=(id,src)=>document.getElementById(id).innerHTML=PF.mb(src,'');
+const _h=new URLSearchParams(location.search).get('hero');
+s('hero-ph',_h?`assets/hero/h${_h}.jpg`:'assets/stock/cur-b.jpg');
+s('about-ph','assets/about.jpg');
+const tpl=(p,i,c)=>`<article class="card" data-id="${p.id}"><div class="cap"><h3>${p.t}</h3><span class="lab">${p.s} — ${String(i+1).padStart(2,'0')}</span></div><div class="mb">${PF.mb(c,p.t)}${p.yt?'<div class="play"><b>▶</b></div>':''}</div></article>`;
+PF.render('#g-ev','eventos',tpl);PF.render('#g-pub','publicidad',tpl);
+const C=PF.contact;
+const m=document.getElementById('c-mail');m.href='mailto:'+C.mail;m.lastElementChild.textContent=C.mail;
+const w=document.getElementById('c-wa');w.href=C.wa;w.lastElementChild.textContent=C.waTxt;
+const g=document.getElementById('c-ig');g.href=C.ig;g.lastElementChild.textContent=C.igTxt;
+</script>
+</body>
+</html>
